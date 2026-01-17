@@ -1,0 +1,36 @@
+@use "../../styles/variables" as *;
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  background-color: var(--bg-header);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    color: $text-main;
+    font-size: font-size(xl);
+    font-weight: 600;
+    @include mobile {
+      font-size: font-size(md);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}

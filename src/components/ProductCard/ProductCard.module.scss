@@ -1,0 +1,128 @@
+@import "../../styles/variables";
+
+.card {
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-card;
+    border-color: $primary-color;
+  }
+
+  &.selected {
+    border: 2px solid $primary-color;
+  }
+}
+
+.imageWrapper {
+  height: 200px;
+  padding: 20px;
+  background: $bg-hover;
+  @include flex-center;
+
+  @include mobile {
+    height: 150px;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+}
+
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.brand {
+  font-size: font-size(xs);
+  color: #6b778c;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: font-size(md);
+  color: $text-main;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  font-size: font-size(sm);
+  color: #42526e;
+  flex-grow: 1;
+
+  li {
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: $primary-color;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price {
+  font-weight: 700;
+  font-size: font-size(md);
+  color: $text-main;
+}
+
+.compareBtn {
+  background: $primary-bg-light;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: font-size(sm);
+
+  &:hover:not(:disabled) {
+    background: rgba($primary-color, 0.1);
+  }
+
+  &:disabled {
+    border-color: #ebecf0;
+    color: #a5adba;
+    cursor: not-allowed;
+  }
+
+  &.btnActive {
+    background: $primary-color;
+    color: $white;
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
+}

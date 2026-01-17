@@ -1,0 +1,58 @@
+$primary-color: var(--primary-color);
+$primary-hover: var(--primary-hover);
+$primary-bg-light: var(--primary-bg-light);
+
+$bg-body: var(--bg-body);
+$bg-card: var(--bg-card);
+$bg-header: var(--bg-header);
+$bg-hover: var(--bg-hover);
+
+$text-main: var(--text-main);
+$text-sub: var(--text-sub);
+$border-color: var(--border-color);
+$shadow-card: var(--shadow-card);
+
+$danger: #de350b; 
+$white: #ffffff;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+$font-sizes: (
+  xs: 0.75rem,     // 12px – meta text, helpers
+  sm: 0.875rem,    // 14px – labels, secondary text
+  base: 1rem,      // 16px – body text (default)
+  md: 1.125rem,    // 18px – section titles
+  lg: 1.25rem,     // 20px – page titles
+  xl: 1.5rem,      // 24px – major headings
+);
+
+/* Font size helper */
+@function font-size($key) {
+  @return map-get($font-sizes, $key);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}

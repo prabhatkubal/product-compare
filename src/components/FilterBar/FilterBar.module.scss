@@ -1,0 +1,103 @@
+@use "../../styles/variables" as *;
+
+.filterContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  background-color: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+
+  @include mobile {
+    align-items: end;
+    gap: 5px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    margin-bottom: 1rem;
+  }
+}
+
+.searchGroup {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+
+  @include mobile {
+    min-width: 100px;
+  }
+
+  .searchInput {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background-color: $bg-body;
+    color: $text-main;
+    font-size: font-size(base);
+
+    @include mobile {
+      width: 100%;
+      background-color: $bg-card;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-color;
+      border-color: transparent;
+    }
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    pointer-events: none;
+    font-size: font-size(sm);
+  }
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $text-main;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  label {
+    font-weight: 500;
+    font-size: font-size(sm);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .brandSelect {
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background-color: $bg-body;
+    color: $text-main;
+    font-size: font-size(base);
+    cursor: pointer;
+
+    @include mobile {
+      background-color: $bg-card;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-color;
+    }
+  }
+}

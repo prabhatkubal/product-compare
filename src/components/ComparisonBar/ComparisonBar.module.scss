@@ -1,0 +1,152 @@
+@import "../../styles/variables";
+
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $bg-card;
+  border-top: 1px solid $primary-color;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+  z-index: 900;
+  animation: slideUp 0.3s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile {
+    justify-content: space-between;
+  }
+}
+
+.thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include mobile {
+    width: fit-content;
+  }
+
+  .countText {
+    font-size: font-size(sm);
+    font-weight: 600;
+    color: $text-main;
+  }
+
+  .list {
+    display: flex;
+    gap: 12px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.thumbItem {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  background: $bg-body;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+  }
+
+  // small x button on the thumbnail
+  .removeIcon {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    background-color: $danger;
+    color: white;
+    font-size: font-size(xs);
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover .removeIcon {
+    opacity: 1;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: $text-sub;
+  cursor: pointer;
+  font-size: font-size(sm);
+  &:hover {
+    color: $danger;
+    text-decoration: underline;
+  }
+
+  @include mobile {
+    width: 80px;
+  }
+}
+
+.compareBtn {
+  background: $primary-color;
+  color: $white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: font-size(base);
+
+  @include mobile {
+    width: max-content;
+    padding: 8px 16px !important;
+    font-size: font-size(sm) !important;
+  }
+
+  &:hover:not(:disabled) {
+    background: $primary-hover;
+  }
+
+  &:disabled {
+    background: #ebecf0;
+    color: #a5adba;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
