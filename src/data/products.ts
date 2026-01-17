@@ -1,6 +1,6 @@
 import { Product } from '../types';
 
-const getImagePath = (filename: string) => `/assets/images/${filename}`;
+const getImagePath = (filename: string) => `${process.env.PUBLIC_URL}/assets/images/${filename}`;
 
 export const products: Product[] = [
   {

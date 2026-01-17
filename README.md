@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+Product Comparison App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo
+https://prabhatkubal.github.io/product-compare/
 
-## Available Scripts
+# Clone the repository
+git clone https://github.com/prabhatkubal/product-compare.git
 
-In the project directory, you can run:
+# Navigate to the project
+cd product-compare
 
-### `npm start`
+# Install dependencies
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Start development server
+npm start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The app will be available at:
+http://localhost:3000
 
-### `npm test`
+## Tech Stack
+React, Typescript, SCSS (Centralized variables, Semantic font-size system,Responsive mixins), React Context API, No backend (static data only)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features
+Displays a grid of products with: Name, Brand, Image, Price
+Responsive Layout for desktop, tablet, mobile
 
-### `npm run build`
+Users can select up to 3 products to compare
+A sticky comparison bar appears when products are selected with thumbnails of selected products along with ability to remove the selection through thumbnails
+Side-by-side comparison model with details:
+Ability to remove products and clear all selections
+Comparison model auto closes if fewer than 2 products
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Search & Filter
+Text-based search by product name
+Brand filter dropdown
+Combined search + filter support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Theme Support
+Light and Dark mode, Respects system preference on first load
+User preference persisted using localStorage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Accessibility (WCAG-focused)
+Keyboard navigation support (Tab, Enter, Space, Escape)
+ARIA roles and labels for interactive elements
+Focus management for modal dialogs
+Uses semantic HTML where appropriate
+Scalable typography using rem units (zoom-friendly)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+State Management
+Context API for comparison and theme state
+Persistent comparison state using localStorage
