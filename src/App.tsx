@@ -13,10 +13,12 @@ function App() {
   const [searchText, setSearchText] = useState('');
   const [activeBrand, setActiveBrand] = useState('All');
 
+  // unique brands list to filter by brand name
   const brandList = useMemo(() => {
     return Array.from(new Set(products.map(product => product.brand))).sort();
   }, []);
 
+  // derived data for ui fitlered by search and brand name
   const visibleProducts = products.filter(product => {
     const matchesSearch = product.name
       .toLowerCase()
@@ -24,7 +26,7 @@ function App() {
 
     const matchesBrand =
       activeBrand === 'All' || product.brand === activeBrand;
-
+      
     return matchesSearch && matchesBrand;
   });
 
@@ -61,9 +63,9 @@ function App() {
             )}
           </div>
         </main>
-
+        {/* Bottom sticky bar displays selection choosen for comparison */}
         <ComparisonBar onCompareNow={() => setIsCompareOpen(true)} />
-
+        {/* Popup comparison model side-by-side table layout */}
         <ComparisonModal
           isOpen={isCompareOpen}
           onClose={() => setIsCompareOpen(false)}

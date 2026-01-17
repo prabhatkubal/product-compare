@@ -21,21 +21,10 @@ const ProductCard: React.FC<ProductCardProps> = ({product}) => {
       }
     };
 
-  const handleKeyAction = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggleCompare();
-    }
-  };
-
     return (
       <article
         className={`${styles.card} ${isSelected ? styles.selected : ""}`}
-        tabIndex={0}
-        role="button"
-        aria-pressed={isSelected}
         aria-label={`${product.name} comparison card`}
-        onKeyDown={handleKeyAction}
       >
         <div className={styles.imageWrapper}>
           <img src={product.image} alt={product.name} loading="lazy" />

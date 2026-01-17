@@ -19,12 +19,14 @@ export const ComparisonProvider: React.FC<{ children: ReactNode }> = ({
     return savedList ? JSON.parse(savedList) : [];
   });
 
+  const isLimitReached = selectedProducts.length >= 3;
+
   useEffect(() => {
     localStorage.setItem("comparison-list", JSON.stringify(selectedProducts));
   }, [selectedProducts]);
 
   const addToCompare = (product: Product) => {
-    if (selectedProducts.length >= 3) {
+    if (isLimitReached) {
       return;
     }
 
@@ -46,8 +48,6 @@ export const ComparisonProvider: React.FC<{ children: ReactNode }> = ({
   const clearComparison = () => {
     setSelectedProducts([]);
   };
-
-  const isLimitReached = selectedProducts.length >= 3;
 
   return (
     <ComparisonContext.Provider
