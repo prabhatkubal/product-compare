@@ -1,8 +1,9 @@
 Product Comparison App
+🔗 Live Demo
 
-## Live Demo
 https://prabhatkubal.github.io/product-compare/
 
+🚀 Setup Instructions
 # Clone the repository
 git clone https://github.com/prabhatkubal/product-compare.git
 
@@ -15,38 +16,89 @@ npm install
 # Start development server
 npm start
 
+
 The app will be available at:
 http://localhost:3000
 
-## Tech Stack
-React, Typescript, SCSS (Centralized variables, Semantic font-size system,Responsive mixins), React Context API, No backend (static data only)
+🛠 Tech Stack
 
-Features
-Displays a grid of products with: Name, Brand, Image, Price
-Responsive Layout for desktop, tablet, mobile
+React
 
-Users can select up to 3 products to compare
-A sticky comparison bar appears when products are selected with thumbnails of selected products along with ability to remove the selection through thumbnails
-Side-by-side comparison model with details:
-Ability to remove products and clear all selections
-Comparison model auto closes if fewer than 2 products
+TypeScript
+
+SCSS
+
+Centralized variables
+
+Semantic font-size system
+
+Responsive mixins
+
+React Context API
+
+Static data only (no backend)
+
+✨ Features
+Product Listing
+
+Displays a grid of products with:
+
+Name
+
+Brand
+
+Image
+
+Price
+
+Key features
+
+Responsive layout for desktop, tablet, and mobile
+
+Product Comparison
+
+Users can select up to 3 products
+
+Sticky comparison bar appears with selected product thumbnails
+
+Ability to remove selections directly from thumbnails
+
+Side-by-side comparison modal showing detailed attributes
+
+Option to remove individual products or clear all selections
+
+Comparison modal auto-closes if fewer than 2 products remain
 
 Search & Filter
+
 Text-based search by product name
+
 Brand filter dropdown
-Combined search + filter support
+
+Combined search and filter support
 
 Theme Support
-Light and Dark mode, Respects system preference on first load
+
+Light and Dark mode
+
+Respects system preference on first load
+
 User preference persisted using localStorage
 
 Accessibility (WCAG-focused)
-Keyboard navigation support (Tab, Enter, Space, Escape)
+
+Keyboard navigation (Tab, Enter, Space, Escape)
+
 ARIA roles and labels for interactive elements
+
 Focus management for modal dialogs
-Uses semantic HTML where appropriate
+
+Semantic HTML usage
+
 Scalable typography using rem units (zoom-friendly)
 
 State Management
+
 Context API for comparison and theme state
-Persistent comparison state using localStorage
+
+Comparison selections persisted using localStorage
