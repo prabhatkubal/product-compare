@@ -37,7 +37,11 @@ Ability to remove selections directly from thumbnails
 Side-by-side comparison modal showing detailed attributes
 Option to remove individual products or clear all selections
 Comparison modal auto-closes if fewer than 2 products remain
-Search & Filter: Text-based search by product name, Brand filter dropdown, Combined search and filter support
+
+# Search & Filter: 
+Text-based search by product name
+Brand filter dropdown
+Combined search and filter support
 
 # Theme Support
 Light and Dark mode
