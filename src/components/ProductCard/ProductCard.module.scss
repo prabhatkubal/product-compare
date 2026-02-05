@@ -39,6 +39,12 @@
   }
 }
 
+:global([data-theme='dark']) {
+  .imageWrapper img {
+    mix-blend-mode: normal;
+  }
+}
+
 .content {
   padding: 16px;
   display: flex;
@@ -48,7 +54,7 @@
 
 .brand {
   font-size: font-size(xs);
-  color: #6b778c;
+  color: $text-sub;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 4px;
@@ -66,7 +72,7 @@
   padding: 0;
   margin: 0 0 16px 0;
   font-size: font-size(sm);
-  color: #42526e;
+  color: $text-sub;
   flex-grow: 1;
 
   li {
